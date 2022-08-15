@@ -8,4 +8,8 @@
     @include('home.theme1.layout.faq-one')
     @include('home.theme1.layout.blog-one')
 
+
+
+
+
 @endsection

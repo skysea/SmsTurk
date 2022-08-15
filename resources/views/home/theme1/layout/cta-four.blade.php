@@ -1,4 +1,4 @@
-<section class="cta-four">
+<section class="cta-four" id="nasil-calisir">
     <img src="{{asset('assets/home/theme1/images/shapes/cta-4-dot-1-1.png')}}" class="cta-four__bg-shape-1" alt="">
     <img src="{{asset('assets/home/theme1/images/shapes/cta-4-shape-1-1.png')}}" class="cta-four__bg-shape-2" alt="">
     <div class="container">

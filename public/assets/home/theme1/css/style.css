@@ -3941,3 +3941,15 @@ a:visited {
 .service-one__single:hover p {
 	color: #c3afdd;
 }
+
+.login-widget__newsletter-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+
+    outline: none;
+    width: 100%;
+    height: 71px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #8b7f9a;
+    font-size: 16px;
+    padding-left: 30px;
+}

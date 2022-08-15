@@ -13,7 +13,7 @@
                     <div class="banner-one__content">
                         <h3>SMS <br> Almaya Başlayın </h3>
                         <p>Sitemizi kullanarak tüm web sitelerinde ve mobil uygulamalarda geçerli, SMS Kodu alın. Bir çok ülkeden numara alabilirsiniz.</p>
-                        <a href="#" class="thm-btn banner-one__btn"><span><i class="fa fa-home"></i> Giriş Yap</span></a>
+                        <a data-toggle="modal" data-target="#exampleModal" href="#" class="thm-btn banner-one__btn"><span><i class="fa fa-home"></i> Giriş Yap</span></a>
                         <a href="#" class="thm-btn banner-one__btn"><span><i class="fa fa-user-plus"></i> Kayıt Ol</span></a>
                         <!-- /.thm-btn banner-one__btn -->
                     </div><!-- /.banner-one__content -->

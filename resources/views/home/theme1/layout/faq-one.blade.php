@@ -1,4 +1,4 @@
-<section class="faq-one mt-5">
+<section class="faq-one mt-5" id="faq">
     <div class="container">
         <div class="block-title text-center">
             <h3>SMS Onay hakkında sıkça sorulan soruları sizin için <span>Cevapladık</span></h3>

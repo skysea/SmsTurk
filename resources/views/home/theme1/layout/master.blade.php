@@ -26,6 +26,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/responsive.css')}}">
+    @yield('home-css')
 </head>
 <body>
 <div class="preloader">
