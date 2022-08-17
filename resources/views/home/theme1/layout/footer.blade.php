@@ -4,11 +4,10 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-6">
                     <div class="footer-widget footer-widget__about">
-                        <a href="index.html" class="logo">
-                            <img src="{{asset('assets/home/theme1/images/logo-1-2.png')}}" width="136" alt="">
+                        <a href="{{route('home.index')}}" class="logo">
+                            <img src="{{asset('assets/images/').'/'.getAyarlar('home_logo')}}" width="136" alt="">
                         </a>
-                        <p>Lorem Ipsum is simply dummy text the <br> printing and setting industry. Lorm Ipsum
-                            <br> has been the text ever.</p>
+                        <p>Sms doğrulaması için sanal numara satın alın.<br> amazon, discord, naver, instagram, whatsapp, google'da hemen sms alın <br>ve hesabınızı onaylayın.</p>
 
                     </div><!-- /.footer-widget footer-widget__about -->
                 </div><!-- /.col-lg-4 -->
@@ -16,10 +15,11 @@
                     <div class="footer-widget footer-widget__links">
                         <h3 class="footer-widget__title">Linkler</h3><!-- /.footer-widget__title -->
                         <ul class="list-unstyled footer-widget__links-list">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Services</a></li>
+                            <li><a href="#features">Özellikler</a></li>
+                            <li><a href="#nasil-calisir">Nasıl Çalışır</a></li>
+                            <li><a href="#faq">S.S.S</a></li>
+                            <li><a href="#testimonials">Yorumlar</a></li>
+                            <li><a href="#blog">Blog</a></li>
                         </ul><!-- /.list-unstyled footer-widget__links-list -->
                     </div><!-- /.footer-widget footer-widget__links -->
                 </div><!-- /.col-lg-2 -->
@@ -29,16 +29,18 @@
                         <ul class="footer-widget__contact-list list-unstyled">
                             <li>
                                 <i class="fa fa-phone-square"></i>
-                                <a href="tel:777-888-0000">777 888 0000</a>
+                                <a href="tel:{{getAyarlar('telefon')}}">{{getAyarlar('telefon')}}</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                <a href="mailto:needhelp@oapee.com">needhelp@oapee.com</a>
+                                <a href="mailto:{{getAyarlar('email')}}">{{getAyarlar('email')}}</a>
                             </li>
+                            @if(getAyarlar('adres'))
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                855 road, broklyn street <br> new york 600
+                                {{getAyarlar('adres')}}
                             </li>
+                            @endif
                         </ul><!-- /.footer-widget__contact-list list-unstyled -->
                     </div><!-- /.footer-widget footer-widget__contact -->
                 </div><!-- /.col-lg-2 -->
@@ -58,7 +60,7 @@
     <div class="site-footer__bottom">
         <div class="container">
             <div class="inner-container">
-                <p>© Copyright 2022. Tüm Hakları Saklıdır by SmsTurk.Net</p>
+                <p>{{getAyarlar('footer_text')}}</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-square"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>

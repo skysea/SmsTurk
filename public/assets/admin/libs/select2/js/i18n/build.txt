@@ -47,9 +47,9 @@ el.js
 ----------------
 el.js
 
-en.js
+en.json
 ----------------
-en.js
+en.json
 
 es.js
 ----------------

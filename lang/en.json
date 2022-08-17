@@ -1,0 +1,9 @@
+{
+
+    "admin": {
+
+        "login.text1" : "Enter your email address and password to access admin panel.",
+        "login.input.label.emailadres": "Email address"
+    }
+
+}

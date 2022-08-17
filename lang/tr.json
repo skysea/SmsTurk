@@ -1,0 +1,9 @@
+{
+
+    "admin": {
+        "login.text1" : "Yönetici paneline erişmek için e-posta adresinizi ve şifrenizi girin.",
+        "login.input.label.emailadres": "E-Posta Adresi",
+        "login.input.emailadres.placeholder": "E-Posta adresinizi giriniz"
+    }
+
+}

@@ -1,6 +1,6 @@
 <section class="blog-one" id="blog">
-    <img src="assets/images/shapes/blog-shape-1-1.png" class="blog-one__bg-shape-1" alt="">
-    <img src="assets/images/shapes/blog-shape-1-2.png" class="blog-one__bg-shape-2" alt="">
+    <img src="{{asset('assets/home/theme1/images/shapes/blog-shape-1-1.png')}}" class="blog-one__bg-shape-1" alt="">
+    <img src="{{asset('assets/home/theme1/images/shapes/blog-shape-1-2.png')}}" class="blog-one__bg-shape-2" alt="">
     <div class="container">
         <div class="block-title text-center">
             <h3>Son <span>Blog</span> Yazıları</h3>

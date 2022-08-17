@@ -7,7 +7,7 @@
         <div class="side-menu__top justify-content-end">
 
             <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+                    src="{{asset('assets/home/theme1/images/shapes/close-1-1.png')}}" alt=""></a>
         </div><!-- /.side-menu__top -->
 
 
@@ -16,10 +16,8 @@
         </nav>
         <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
         <div class="side-menu__content">
-            <p>Lorem Ipsum is simply dummy text the printing and setting industry. Lorm Ipsum has been the
-                industry's stanard dummy text ever. </p>
-            <p><a href="mailto:needhelp@oapee.com">needhelp@oapee.com</a> <br> <a href="tel:888-999-0000">888 999
-                    0000</a></p>
+            <p>Sms doğrulaması için sanal numara satın alın. amazon, discord, naver, instagram, whatsapp, google'da hemen sms alın ve hesabınızı onaylayın. </p>
+            <p><a href="{{getAyarlar('email')}}">{{getAyarlar('email')}}</a> <br> <a href="tel:{{getAyarlar('telefon')}}">{{getAyarlar('telefon')}}</a></p>
             <div class="side-menu__social">
                 <a href="#"><i class="fab fa-facebook-square"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>

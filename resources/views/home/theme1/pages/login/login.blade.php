@@ -14,33 +14,52 @@
 
 
 
-
     <section class="blog-grid">
         <div class="container">
             <div class="row">
             <div class="col-md-6">
             <div class="footer-widget footer-widget__newsletter">
-                <h3 class="footer-widget__title">Giriş Yap</h3>
-                <form action="#" class="login-widget__newsletter-form" method="post">
+                <h3 class="footer-widget__title"><i class="fa fa-user"></i> Giriş Yap</h3>
+                @if(Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        <strong><i class="fa-solid fa-triangle-exclamation"></i> Hata!</strong> {{Session::get('error')}}
+                    </div>
+                @endif
+                <form action="{{route('home.login.post')}}" class="login-widget__newsletter-form" method="post">
+                    @csrf
                     <div class="form-group mb-3">
-                    <input class="form-control" type="email" placeholder="Email adresinizi yazınız" name="email">
+                        <label for="password">E-Posta Adresi</label>
+                    <input value="{{old('email')}}" class="form-control {{$errors->has('email') ? 'is-invalid':''}}" type="email" placeholder="E-Posta adresinizi giriniz." name="email">
+                        @if($errors->has('email'))
+                        <ul class="text-danger" ><li class="parsley-required">{{$errors->first('email')}}</li></ul>
+                        @endif
                     </div>
                     <div class="form-group mb-3">
-                        <input class="form-control" type="password" placeholder="Şifrenizi yazınız" name="sifre">
+                        <label for="password">Şifre</label>
+                        <input class="form-control {{$errors->has('password') ? 'is-invalid':''}}" type="password" placeholder="Şifrenizi giriniz" name="password">
+                        @if($errors->has('password'))
+                            <ul class="text-danger" ><li class="parsley-required">{{$errors->first('password')}}</li></ul>
+                        @endif
                     </div>
                     <div class="form-group mb-3">
-                        <input class="form-control" type="password" placeholder="Şifrenizi yazınız" name="sifre">
+                        <div class="g-recaptcha" data-theme="light"
+                             data-sitekey="{{getAyarlar('recaptcha_site_key')}}">
+                        </div>
+                        @if($errors->has('g-recaptcha-response'))
+
+                            <ul class="text-danger" ><li class="parsley-required">{{$errors->first('g-recaptcha-response')}}</li></ul>
+                        @endif
                     </div>
                     <div class="form-group mb-3">
 
-                        <button type="submit" class="thm-btn cta-one__btn">Giriş Yap</button>
+                        <button type="submit" class="thm-btn cta-one__btn ladda-button" data-style="expand-right">Giriş Yap</button>
                     </div>
 
                 </form>
             </div>
             </div>
             <div class="col-md-6">
-                <img class="img-fluid" src="https://demo.smsonayscripti.com/assets/theme-1/img/photos/tm3.jpg">
+                <img class="img-fluid" src="{{asset('assets/home/theme1/images/tm3.jpg')}}">
             </div>
             </div>
 

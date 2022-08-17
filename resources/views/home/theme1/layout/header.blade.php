@@ -1,7 +1,7 @@
 <header class="site-header-one stricky site-header-one__fixed-top">
     <div class="container-fluid">
         <div class="site-header-one__logo">
-            <a href="index.html">
+            <a href="{{route('home.index')}}">
                 <img src="{{asset('assets/home/theme1/images/smsturk_logo_white.png')}}" width="180" alt="">
             </a>
             <span class="side-menu__toggler"><i class="fa fa-bars"></i></span><!-- /.side-menu__toggler -->
@@ -24,13 +24,17 @@
         <div class="main-nav__right">
             <a href="tel:777-888-0000" class="main-nav__cta">
                 <img src="{{asset('assets/home/theme1/images/shapes/whatsapp_icon_48x48.png')}}" alt="">
-                <span>
+                         <span>
                             <i>Whatsapp İletişim </i>
-                            <b>+244 933 740 171</b>
+                            <b>{{getAyarlar('whatsapp')}}</b>
                         </span>
             </a><!-- /.main-nav__cta -->
-            <a href="#" class="thm-btn main-nav__btn"><span> Giriş Yap</span></a>
+            @if(!auth()->user())
+            <a href="{{route('home.login')}}" class="thm-btn main-nav__btn"><span> Giriş Yap</span></a>
             <a href="#" class="thm-btn main-nav__btn m-sm-2"><span> Kayıt Ol</span></a>
+            @else
+                <a href="#" class="thm-btn main-nav__btn"><span>  Müşteri Paneli</span></a>
+            @endif
         </div><!-- /.main-nav__right -->
     </div><!-- /.container-fluid -->
 </header><!-- /.site-header-one -->
