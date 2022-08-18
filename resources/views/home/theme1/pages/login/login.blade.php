@@ -1,4 +1,5 @@
 @extends('home.theme1.layout.master')
+@section('home-title','Giriş Yap')
 
 
 @section('home-content')
@@ -6,7 +7,7 @@
         <div class="container">
             <h2>Giriş</h2>
             <ul class="list-unstyled thm-breadcrumb">
-                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="{{route('home.index')}}">Ana Sayfa</a></li>
                 <li><span>Giriş</span></li>
             </ul><!-- /.list-unstyled thm-breadcrumb -->
         </div><!-- /.container -->
@@ -23,6 +24,17 @@
                 @if(Session::has('error'))
                     <div class="alert alert-danger" role="alert">
                         <strong><i class="fa-solid fa-triangle-exclamation"></i> Hata!</strong> {{Session::get('error')}}
+                    </div>
+                @endif
+
+                @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong><i class="fa-solid fa-triangle-exclamation"></i> Başarılı!</strong> {{Session::get('success')}}
+                    </div>
+                @endif
+                @if(Session::has('register_success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong><i class="fa-solid fa-triangle-exclamation"></i> Başarılı!</strong> {{Session::get('register_success')}}
                     </div>
                 @endif
                 <form action="{{route('home.login.post')}}" class="login-widget__newsletter-form" method="post">
@@ -56,6 +68,18 @@
                     </div>
 
                 </form>
+                <div class="text-center">
+                   <div class="row">
+                       <div class="col-md-12">
+                           <a href="{{route('home.sifremi.unuttum')}}">Şifremi Unuttum</a>
+                       </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>Hesabınız yokmu? Hemen</span><a href="{{route('home.register')}}"> Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             </div>
             <div class="col-md-6">

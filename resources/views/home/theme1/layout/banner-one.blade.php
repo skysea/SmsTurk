@@ -15,7 +15,7 @@
                         <p>Sitemizi kullanarak tüm web sitelerinde ve mobil uygulamalarda geçerli, SMS Kodu alın. Bir çok ülkeden numara alabilirsiniz.</p>
                         @if(!auth()->user())
                         <a  href="{{route('home.login')}}" class="thm-btn banner-one__btn"><span><i class="fa fa-home"></i> Giriş Yap</span></a>
-                        <a href="#" class="thm-btn banner-one__btn"><span><i class="fa fa-user-plus"></i> Kayıt Ol</span></a>
+                        <a href="{{route('home.register')}}" class="thm-btn banner-one__btn"><span><i class="fa fa-user-plus"></i> Kayıt Ol</span></a>
                         @else
                             <a href="#" class="thm-btn banner-one__btn"><span><i class="fa fa-user"></i> Müşteri Paneli</span></a>
                         @endif

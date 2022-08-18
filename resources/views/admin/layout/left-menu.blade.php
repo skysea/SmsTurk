@@ -1,126 +1,75 @@
-<div class="left-side-menu">
+<nav id="sidebar" class="nav-sidebar">
+    <ul class="list-unstyled components" id="accordion">
+        <div class="user-profile">
+            <div class="dropdown user-pro-body">
 
-    <div class="h-100" data-simplebar>
-
-        <!-- User box -->
-        <div class="user-box text-center">
-            <img src="{{asset('assets/admin/images/users/user-1.jpg')}}" alt="user-img" title="Mat Helme"
-                 class="rounded-circle avatar-md">
-            <div class="dropdown">
-                <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
-                   data-toggle="dropdown">Geneva Kennedy</a>
-                <div class="dropdown-menu user-pro-dropdown">
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-user mr-1"></i>
-                        <span>My Account</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-settings mr-1"></i>
-                        <span>Settings</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-lock mr-1"></i>
-                        <span>Lock Screen</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="fe-log-out mr-1"></i>
-                        <span>Logout</span>
-                    </a>
-
+                <div class="mb-2"><a href="#" class="" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                        <span class="font-weight-semibold">{{auth()->user()->adsoyad}}</span>  </a>
+                    <br><span class="text-gray">Yönetici</span><br>
+                    <a href="#" class="btn btn-sm btn-primary">Müşteri Paneli</a>
                 </div>
             </div>
-            <p class="text-muted">Admin Head</p>
         </div>
 
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-
-            <ul id="side-menu">
-
-                <li class="menu-title">Menü</li>
-
-                <li>
-                    <a href="apps-calendar.html">
-                        <i class="mdi mdi-home"></i>
-                        <span> Ana Sayfa </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="apps-chat.html">
-                        <i class="mdi mdi-cart"></i>
-                        <span> Siparişler </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#sidebarEcommerce" data-toggle="collapse">
-                        <i class="mdi mdi-align-vertical-bottom"></i>
-                        <span> Servisler </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarEcommerce">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="ecommerce-dashboard.html">Servis Listesi</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-products.html">Servis Ekle</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-product-detail.html">Toplu Servis Ekle</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-product-edit.html">Kategori Listesi</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-customers.html">Kategori Ekle</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-orders.html">Toplu Fiyat Güncelle</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </li>
 
 
-                <li>
-                    <a href="apps-chat.html">
-                        <i class="mdi mdi-cog"></i>
-                        <span> Ayarlar </span>
-                    </a>
-                </li>
+        <li>
+            <a href="maps.html" class=" wave-effect"><i class="fa fa-home mr-2"></i> Ana Sayfa</a>
+        </li>
+        <li>
+            <a href="maps.html" class=" wave-effect"><i class="fa fa-cart-plus mr-2"></i> Siparişler</a>
+        </li>
+        <li class="">
+            <a href="#servislerSubmenu" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                <i class="fa fa-cube mr-2"></i> Servisler
+            </a>
+            <ul class="collapse list-unstyled" id="servislerSubmenu" data-parent="#accordion">
+                <li><a href="index-1.html">Servisler</a></li>
+                <li><a href="index2.html">Servis Ekle</a></li>
+                <li><a href="index3.html">Toplu Servis Ekle</a></li>
+                <li><a href="index4.html">Kategoriler</a></li>
+                <li><a href="index5.html">Kategori Ekle</a></li>
+                <li><a href="index5.html">Toplu Fiyat Güncelle</a></li>
+            </ul>
+        </li>
 
+        <li class="">
+            <a href="#finansSunmenu" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                <i class="fa fa-credit-card mr-2"></i> Finans
+            </a>
+            <ul class="collapse list-unstyled" id="finansSunmenu" data-parent="#accordion">
+                <li><a href="index-1.html">Ödeme Bildirimleri</a></li>
+                <li><a href="index2.html">Banka Hesapları</a></li>
+                <li><a href="index3.html">Banka Hesabı Ekle</a></li>
+                <li><a href="index4.html">Kuponlar</a></li>
+                <li><a href="index5.html">Kupon Oluştur</a></li>
 
+            </ul>
+        </li>
 
-
-
-
-
-
-
-
-
-
+        <li class="">
+            <a href="#sayfalarSubmenu" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                <i class="fa fa-file mr-2"></i> Sayfalar
+            </a>
+            <ul class="collapse list-unstyled" id="sayfalarSubmenu" data-parent="#accordion">
+                <li><a href="index-1.html">Blog Yazıları</a></li>
+                <li><a href="index2.html">Blog Yazısı Ekle</a></li>
+                <li><a href="index3.html">Kullanım Şartları</a></li>
 
 
             </ul>
+        </li>
 
-        </div>
-        <!-- End Sidebar -->
+        <li>
+            <a href="maps.html" class=" wave-effect"><i class="fa fa-puzzle-piece mr-2"></i> Eklentiler</a>
+        </li>
+        <li>
+            <a href="maps.html" class=" wave-effect"><i class="fa fa-support mr-2"></i> Destek Talepleri</a>
+        </li>
 
-        <div class="clearfix"></div>
+        <li>
+            <a href="maps.html" class=" wave-effect"><i class="fa fa-cog mr-2"></i> Ayarlar</a>
+        </li>
 
-    </div>
-    <!-- Sidebar -left -->
-
-</div>
+    </ul>
+</nav>

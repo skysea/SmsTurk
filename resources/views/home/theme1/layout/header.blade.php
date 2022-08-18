@@ -31,9 +31,9 @@
             </a><!-- /.main-nav__cta -->
             @if(!auth()->user())
             <a href="{{route('home.login')}}" class="thm-btn main-nav__btn"><span> Giriş Yap</span></a>
-            <a href="#" class="thm-btn main-nav__btn m-sm-2"><span> Kayıt Ol</span></a>
+            <a href="{{route('home.register')}}" class="thm-btn main-nav__btn m-sm-2"><span> Kayıt Ol</span></a>
             @else
-                <a href="#" class="thm-btn main-nav__btn"><span>  Müşteri Paneli</span></a>
+                <a href="{{route('panel.home')}}" class="thm-btn main-nav__btn"><span>  Müşteri Paneli</span></a>
             @endif
         </div><!-- /.main-nav__right -->
     </div><!-- /.container-fluid -->

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="{{getAyarlar('site_name')}}">
     <meta name="description" content="{{getAyarlar('site_description')}}">
-    <title>{{getAyarlar('site_title')}}</title>
+    <title>{{getAyarlar('site_title')}} | @yield('home-title')</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}">
     <link rel="manifest" href="{{asset('assets/home/theme1/images/favicons/site.webmanifest')}}">
     <!-- plugin styles -->
-    <link href="{{asset('assets/admin/libs/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/admin/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/bootstrap-datepicker.min.css')}}">
@@ -69,8 +69,11 @@
 
 
 <!-- Loading buttons js -->
-<script src="{{asset('assets/admin/libs/ladda/spin.min.js')}}"></script>
-<script src="{{asset('assets/admin/libs/ladda/ladda.min.js')}}"></script>
-<script src="{{asset('assets/admin/js/pages/loading-btn.init.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/ladda/spin.min.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/ladda/ladda.min.js')}}"></script>
+
+<script>
+    Ladda.bind('button[type=submit]', {timeout: 10000});
+</script>
 </body>
 </html>
