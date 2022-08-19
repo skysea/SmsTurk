@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAyarlarController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\PasswordResetController;
@@ -43,15 +44,23 @@ Route::post('/sifre-degistir-post',[PasswordResetController::class,'SifreDegisti
 //Panel
 Route::prefix('panel')->group(function (){
 
-    Route::get('/home',[PanelHomeController::class,'Index'])->name('panel.home');
+    Route::middleware('auth')->group(function (){
+        Route::get('/home',[PanelHomeController::class,'Index'])->name('panel.home');
+    });
+
 
 });
 
 //Admin
 Route::prefix('admin')->group(function (){
 
-    Route::get('/admin/login',[\App\Http\Controllers\Admin\LoginController::class,'Index'])->name('admin.login');
-    Route::get('/home',[AdminHomeController::class,'Index'])->name('admin.home');
+    Route::middleware('isAdmin')->group(function (){
+
+        //Home
+        Route::get('/home',[AdminHomeController::class,'Index'])->name('admin.home');
+        //Ayarlar
+        Route::get('/ayarlar',[AdminAyarlarController::class,'Index'])->name('admin.ayarlar.home');
+    });
 });
 
 

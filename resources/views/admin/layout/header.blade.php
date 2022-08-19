@@ -4,11 +4,11 @@
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
                 <a href="index.html">
-                    <img src="{{asset('assets/admin/assets/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
+                    <img src="{{asset('assets/images').'/'.getAyarlar('admin_panel_logo')}}" class="navbar-logo" alt="logo">
                 </a>
             </li>
             <li class="nav-item theme-text">
-                <a href="index.html" class="nav-link"> CORK </a>
+                <a href="index.html" class="nav-link"> {{getAyarlar('site_name')}} </a>
             </li>
         </ul>
 
