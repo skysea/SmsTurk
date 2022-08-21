@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/',[HomeController::class,'Index'])->name('home.index');
+Route::get('/whatsapp',function (){
+    return redirect()->away('https://wa.me/'.getAyarlar('whatsapp'));
+
+})->name('whatsapp');
 
 //Home Login
 Route::get('/login',[\App\Http\Controllers\Home\LoginController::class,'Index'])->name('home.login');
@@ -60,6 +64,13 @@ Route::prefix('admin')->group(function (){
         Route::get('/home',[AdminHomeController::class,'Index'])->name('admin.home');
         //Ayarlar
         Route::get('/ayarlar',[AdminAyarlarController::class,'Index'])->name('admin.ayarlar.home');
+        Route::post('/genel-ayarlar/homelogoyukle',[AdminAyarlarController::class,'homelogoyukle'])->name('admin.genel.ayarlar.homelogoyukle');
+        Route::post('/genel-ayarlar/panellogoyukle',[AdminAyarlarController::class,'panellogoyukle'])->name('admin.genel.ayarlar.panellogoyukle');
+        Route::post('/genel-ayarlar/adminpanellogoyukle',[AdminAyarlarController::class,'adminpanellogoyukle'])->name('admin.genel.ayarlar.adminpanellogoyukle');
+        Route::post('/genel-ayarlar/faviconyukle',[AdminAyarlarController::class,'faviconyukle'])->name('admin.genel.ayarlar.faviconyukle');
+        Route::post('/genel-ayarlar/genel-ayarlar-kaydet',[AdminAyarlarController::class,'genelayarlarkaydet'])->name('admin.genel.ayarlar.genel.ayarlar.kaydet');
+        Route::get('/genel-ayarlar/smtp',[AdminAyarlarController::class,'smtpIndex'])->name('admin.genel.ayarlar.smtp');
+        Route::post('/genel-ayarlar-smtp-kaydet',[AdminAyarlarController::class,'smtpKaydet'])->name('admin.gene.ayarlar.smtp.kaydet');
     });
 });
 

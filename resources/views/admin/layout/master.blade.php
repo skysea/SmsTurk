@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{getAyarlar('site_name')}} Yönetim Paneli | @yield('admin-title')</title>
     <link rel="icon" type="image/x-icon" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}"/>
     <link href="{{asset('assets/admin/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
@@ -21,6 +22,10 @@
     <link href="{{asset('assets/admin/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/assets/css/widgets/modules-widgets.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/plugins/fontawesome/css/all.min.css')}}">
+    <link href="{{asset('assets/admin/plugins/loading/waitMe.css')}}"  rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/admin/plugins/Toasteur/themes/toasteur-default.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/admin/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
+
     @yield('admin-css')
 </head>
 <body>
@@ -77,6 +82,15 @@
 <script src="{{asset('assets/admin/plugins/apex/apexcharts.min.js')}}"></script>
 
 <script src="{{asset('assets/admin/plugins/velocity-animate/velocity.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/loading/waitMe.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/Toasteur/toasteur.min.js')}}"></script>
+<!-- Loading buttons js -->
+<script src="{{asset('assets/admin/plugins/ladda/spin.min.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/ladda/ladda.min.js')}}"></script>
+<script>
+    Ladda.bind('button[type=submit]', {timeout: 10000});
+</script>
 @yield('admin-js')
+@include('admin.layout.flash')
 </body>
 </html>

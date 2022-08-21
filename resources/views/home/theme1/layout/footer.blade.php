@@ -31,16 +31,17 @@
                                 <i class="fa fa-phone-square"></i>
                                 <a href="tel:{{getAyarlar('telefon')}}">{{getAyarlar('telefon')}}</a>
                             </li>
+                            @if(getAyarlar('whatsapp'))
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <a target="_blank" href="{{route('whatsapp')}}">{{getAyarlar('whatsapp')}}</a>
+                            </li>
+                            @endif
                             <li>
                                 <i class="fa fa-envelope"></i>
                                 <a href="mailto:{{getAyarlar('email')}}">{{getAyarlar('email')}}</a>
                             </li>
-                            @if(getAyarlar('adres'))
-                            <li>
-                                <i class="fa fa-map-marker"></i>
-                                {{getAyarlar('adres')}}
-                            </li>
-                            @endif
+
                         </ul><!-- /.footer-widget__contact-list list-unstyled -->
                     </div><!-- /.footer-widget footer-widget__contact -->
                 </div><!-- /.col-lg-2 -->

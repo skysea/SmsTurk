@@ -5,7 +5,7 @@
     <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="{{getAyarlar('site_name')}}">
-    <meta name="description" content="{{getAyarlar('site_description')}}">
+    <meta name="description" content="{{getAyarlar('site_meta_description')}}">
     <title>{{getAyarlar('site_title')}} | @yield('home-title')</title>
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/images').'/'.getAyarlar('favicon')}}">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/home/theme1/plugin/fontawesome/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/theme1/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/jquery.bxslider.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/owl.carousel.min.css')}}">
