@@ -19,13 +19,13 @@
                                 <a class="nav-link active"   href="{{route('admin.genel.ayarlar.smtp')}}" role="tab" aria-controls="justify-right-profile" aria-selected="true">SMTP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
+                                <a class="nav-link"   href="{{route('admin.genel.ayarlar.recaptha')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
+                                <a class="nav-link"  href="{{route('genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
+                                <a class="nav-link"   href="{{route('genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>
@@ -35,7 +35,7 @@
 
                     <div class="widget-content mt-5">
 
-                        <form id="form_smtp" action="{{route('admin.gene.ayarlar.smtp.kaydet')}}" method="post">
+                        <form id="form_smtp" action="{{route('admin.genel.ayarlar.smtp.kaydet')}}" method="post">
                             @csrf
                             <div class="form-row mb-4">
                                 <div class="form-group col-md-6">

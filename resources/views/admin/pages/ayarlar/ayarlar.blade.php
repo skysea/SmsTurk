@@ -30,13 +30,13 @@
                                 <a class="nav-link"   href="{{route('admin.genel.ayarlar.smtp')}}" role="tab" aria-controls="justify-right-profile" aria-selected="false">SMTP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
+                                <a class="nav-link"   href="{{route('admin.genel.ayarlar.recaptha')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
+                                <a class="nav-link"  href="{{route('genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
+                                <a class="nav-link"   href="{{route('genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>

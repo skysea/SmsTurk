@@ -70,7 +70,12 @@ Route::prefix('admin')->group(function (){
         Route::post('/genel-ayarlar/faviconyukle',[AdminAyarlarController::class,'faviconyukle'])->name('admin.genel.ayarlar.faviconyukle');
         Route::post('/genel-ayarlar/genel-ayarlar-kaydet',[AdminAyarlarController::class,'genelayarlarkaydet'])->name('admin.genel.ayarlar.genel.ayarlar.kaydet');
         Route::get('/genel-ayarlar/smtp',[AdminAyarlarController::class,'smtpIndex'])->name('admin.genel.ayarlar.smtp');
-        Route::post('/genel-ayarlar-smtp-kaydet',[AdminAyarlarController::class,'smtpKaydet'])->name('admin.gene.ayarlar.smtp.kaydet');
+        Route::post('/genel-ayarlar/smtp-kaydet',[AdminAyarlarController::class,'smtpKaydet'])->name('admin.genel.ayarlar.smtp.kaydet');
+        Route::get('/genel-ayarlar/recaptha',[AdminAyarlarController::class,'recapthaIndex'])->name('admin.genel.ayarlar.recaptha');
+        Route::post('/genel-ayarlar/recaptha-kaydet',[AdminAyarlarController::class,'recapthaKaydet'])->name('admin.genel.ayarlar.recaptha.kaydet');
+        Route::get('/genel-ayarlar/api',[AdminAyarlarController::class,'apiIndex'])->name('genel.ayarlar.api');
+        Route::post('/genel-ayarlar/apikaydet',[AdminAyarlarController::class,'apiKaydet'])->name('genel.ayarlar.api.kaydet');
+        Route::get('/genel-ayarlar/odeme',[AdminAyarlarController::class,'odemeIndex'])->name('genel.ayarlar.odeme');
     });
 });
 

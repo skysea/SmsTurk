@@ -168,5 +168,39 @@ class AdminAyarlarController extends Controller
         return Redirect::back()->with('success','Smtp ayarları başarıyla güncellendi');
 
     }
+    public function recapthaIndex(){
+        return view('admin.pages.ayarlar.recaptha');
+    }
+    public function recapthaKaydet(Request $request){
+        $validated = $request->validate([
+            'recaptcha_site_key'=>'required',
+            'recaptcha_secret_key'=>'required',
+        ],[
+            'recaptcha_site_key.required'=>'ReCaptcha site anahtarını yazmadınız.',
+            'recaptcha_secret_key.required'=>'ReCaptcha gizli anahtarını yazmadınız',
+        ]);
+
+        $smtp_host = Ayarlar::where('name','recaptcha_site_key')->update(['value'=>$request->recaptcha_site_key]);
+        $smtp_user = Ayarlar::where('name','recaptcha_secret_key')->update(['value'=>$request->recaptcha_secret_key]);
+        return Redirect::back()->with('success','ReCaptcha ayarları başarıyla güncellendi');
+    }
+    public function apiIndex(){
+        return view('admin.pages.ayarlar.api');
+    }
+    public function apiKaydet(Request $request){
+        $validated = $request->validate([
+            'sim5_api_key'=>'required',
+            'sms_actvice_api_key'=>'required',
+        ],[
+            'sim5_api_key.required'=>'5sim.net api anahtarını yazmadınız.',
+            'sms_actvice_api_key.required'=>'sms-active.org api anahtarını yazmadınız',
+        ]);
+        $smtp_host = Ayarlar::where('name','sim5_api_key')->update(['value'=>$request->sim5_api_key]);
+        $smtp_user = Ayarlar::where('name','sms_actvice_api_key')->update(['value'=>$request->sms_actvice_api_key]);
+        return Redirect::back()->with('success','API anahtarları başarıyla güncellendi');
+    }
+    public function odemeIndex(){
+        return view('admin.pages.ayarlar.odeme');
+    }
 
 }
