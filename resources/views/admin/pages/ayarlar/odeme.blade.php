@@ -48,25 +48,44 @@
                                         <option value="paytr">Paytr</option>
                                         <option value="shopier">Shopier</option>
                                     </select>
-                                    @if($errors->has('sim5_api_key'))
-                                        <div class="invalid-feedback" style="display: block;">{{$errors->first('sim5_api_key')}}</div>
+                                    @if($errors->has('odeme_yontemi'))
+                                        <div class="invalid-feedback" style="display: block;">{{$errors->first('odeme_yontemi')}}</div>
                                     @endif
                                 </div>
                                 <div class="row col-md-12" id="odeme_ozellik_shopier" style="display: none">
-                                <div class="form-group col-md-12">
+                                    <div class="form-group col-md-12">
                                     <label for="smtp_host">Shopier Api Anahtarı</label>
-                                    <input type="text" class="form-control" name="">
-                                    @if($errors->has('sim5_api_key'))
-                                        <div class="invalid-feedback" style="display: block;">{{$errors->first('sim5_api_key')}}</div>
+                                    <input placeholder="Shopier api anahtari" value="{{getAyarlar('shopier_api_anahtari')}}" type="text" class="form-control" name="shopier_api_anahtari">
+                                    @if($errors->has('shopier_api_anahtari'))
+                                        <div class="invalid-feedback" style="display: block;">{{$errors->first('shopier_api_anahtari')}}</div>
                                     @endif
                                 </div>
+
                                     <div class="form-group col-md-12">
                                         <label for="smtp_host">Shopier Api Gizli Anahtarı</label>
-                                        <input type="text" class="form-control" name="">
-                                        @if($errors->has('sim5_api_key'))
-                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('sim5_api_key')}}</div>
+                                        <input placeholder="Shopier api gizli anahtar" value="{{getAyarlar('shopier_api_gizli_anahtari')}}" type="text" class="form-control" name="shopier_api_gizli_anahtari">
+                                        @if($errors->has('shopier_api_gizli_anahtari'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('shopier_api_gizli_anahtari')}}</div>
                                         @endif
                                     </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="smtp_host">Shopier Site Sırası</label>
+                                        <input value="{{getAyarlar('shopier_site_sirasi')}}" type="text" class="form-control" name="shopier_site_sirasi">
+                                        @if($errors->has('shopier_site_sirasi'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('shopier_site_sirasi')}}</div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="smtp_host">Shopier Komisyon Oranı</label>
+                                        <input value="{{getAyarlar('shopier_komisyon_orani')}}" type="text" class="form-control" name="shopier_komisyon_orani">
+                                        @if($errors->has('shopier_komisyon_orani'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('shopier_komisyon_orani')}}</div>
+                                        @endif
+                                    </div>
+
+
                                 </div>
 
 
@@ -74,7 +93,7 @@
                                 <div class="row col-md-12" id="odeme_ozellik_paytr" style="display: none">
                                     <div class="form-group col-md-12">
                                         <label for="smtp_host">PayTR Mağaza No</label>
-                                        <input type="text" class="form-control">
+                                        <input value="{{getAyarlar('paytr_magaza_no')}}" type="text" class="form-control" name="paytr_magaza_no">
                                         @if($errors->has('sim5_api_key'))
                                             <div class="invalid-feedback" style="display: block;">{{$errors->first('sim5_api_key')}}</div>
                                         @endif
