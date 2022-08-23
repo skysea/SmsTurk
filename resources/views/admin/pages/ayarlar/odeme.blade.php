@@ -25,26 +25,26 @@
                                 <a class="nav-link"   href="{{route('admin.genel.ayarlar.recaptha')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  href="{{route('genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
+                                <a class="nav-link"  href="{{route('admin.genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active"   href="{{route('genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="true">Ödeme</a>
+                                <a class="nav-link active"   href="{{route('admin.genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="true">Ödeme</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>
+                                <a class="nav-link"   href="{{route('admin.genel.ayarlar.extra')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="widget-content mt-5">
 
-                        <form id="form_smtp" action="{{route('genel.ayarlar.api.kaydet')}}" method="post">
+                        <form id="form_odeme" action="{{route('admin.genel.ayarlar.odeme.kaydet')}}" method="post">
                             @csrf
                             <div class="form-row mb-4">
                                 <div class="form-group col-md-12">
                                     <label for="smtp_host">Ödeme Yöntemi</label>
                                     <select name="odeme_yontemi" class="form-control" id="odeme_yontemi">
-                                        <option value="0" selected>-Seçiniz-</option>
+                                        <option value="" selected>-Seçiniz-</option>
                                         <option value="paytr">Paytr</option>
                                         <option value="shopier">Shopier</option>
                                     </select>
@@ -78,7 +78,7 @@
                                     </div>
 
                                     <div class="form-group col-md-12">
-                                        <label for="smtp_host">Shopier Komisyon Oranı</label>
+                                        <label for="smtp_host">Shopier Komisyon Oranı (%)</label>
                                         <input value="{{getAyarlar('shopier_komisyon_orani')}}" type="text" class="form-control" name="shopier_komisyon_orani">
                                         @if($errors->has('shopier_komisyon_orani'))
                                             <div class="invalid-feedback" style="display: block;">{{$errors->first('shopier_komisyon_orani')}}</div>
@@ -89,13 +89,36 @@
                                 </div>
 
 
-
                                 <div class="row col-md-12" id="odeme_ozellik_paytr" style="display: none">
                                     <div class="form-group col-md-12">
                                         <label for="smtp_host">PayTR Mağaza No</label>
                                         <input value="{{getAyarlar('paytr_magaza_no')}}" type="text" class="form-control" name="paytr_magaza_no">
-                                        @if($errors->has('sim5_api_key'))
-                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('sim5_api_key')}}</div>
+                                        @if($errors->has('paytr_magaza_no'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('paytr_magaza_no')}}</div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="smtp_host">PayTR Mağaza Anahtarı</label>
+                                        <input value="{{getAyarlar('paytr_magaza_anahtari')}}" type="text" class="form-control" name="paytr_magaza_anahtari">
+                                        @if($errors->has('paytr_magaza_anahtari'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('paytr_magaza_anahtari')}}</div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="smtp_host">PayTR Mağaza Gizli Anahtarı</label>
+                                        <input value="{{getAyarlar('paytr_magaza_gizli_anahtari')}}" type="text" class="form-control" name="paytr_magaza_gizli_anahtari">
+                                        @if($errors->has('paytr_magaza_gizli_anahtari'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('paytr_magaza_gizli_anahtari')}}</div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="smtp_host">PayTR Komisyon Oranı(%)</label>
+                                        <input value="{{getAyarlar('paytr_komisyon_orani')}}" type="text" class="form-control" name="paytr_komisyon_orani">
+                                        @if($errors->has('paytr_komisyon_orani'))
+                                            <div class="invalid-feedback" style="display: block;">{{$errors->first('paytr_komisyon_orani')}}</div>
                                         @endif
                                     </div>
                                 </div>

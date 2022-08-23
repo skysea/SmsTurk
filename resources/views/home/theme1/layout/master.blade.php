@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/theme1/css/responsive.css')}}">
     @yield('home-css')
+    @if(getAyarlar('extra_header'))
+    {!! getAyarlar('extra_header') !!}
+    @endif
 </head>
 <body>
 <div class="preloader">
@@ -75,5 +78,8 @@
 <script>
     Ladda.bind('button[type=submit]', {timeout: 10000});
 </script>
+@if(getAyarlar('extra_footer'))
+{!! getAyarlar('extra_footer') !!}
+@endif
 </body>
 </html>

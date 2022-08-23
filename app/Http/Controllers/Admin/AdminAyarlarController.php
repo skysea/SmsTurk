@@ -143,6 +143,7 @@ class AdminAyarlarController extends Controller
         $telefon = Ayarlar::where('name','telefon')->update(['value'=>$request->telefon]);
         $whatsapp = Ayarlar::where('name','whatsapp')->update(['value'=>$request->whatsapp]);
         $eposta = Ayarlar::where('name','email')->update(['value'=>$request->email]);
+        $footer_text = Ayarlar::where('name','footer_text')->update(['value'=>$request->footer_text]);
         return Redirect::back()->with('success','Genel ayarlar başarıyla güncellendi');
     }
     public function smtpIndex(){
@@ -201,6 +202,38 @@ class AdminAyarlarController extends Controller
     }
     public function odemeIndex(){
         return view('admin.pages.ayarlar.odeme');
+    }
+    public function odemeKaydet(Request $request){
+
+        $validated = $request->validate([
+            'odeme_yontemi'=>'required',
+
+        ],[
+            'odeme_yontemi.required'=>'Ödeme yöntemi seçiniz',
+
+        ]);
+
+        $shopier_api_anahtari = Ayarlar::where('name','shopier_api_anahtari')->update(['value'=>$request->shopier_api_anahtari]);
+        $shopier_api_gizli_anahtari = Ayarlar::where('name','shopier_api_gizli_anahtari')->update(['value'=>$request->shopier_api_gizli_anahtari]);
+        $shopier_site_sirasi = Ayarlar::where('name','shopier_site_sirasi')->update(['value'=>$request->shopier_site_sirasi]);
+        $shopier_komisyon_orani = Ayarlar::where('name','shopier_komisyon_orani')->update(['value'=>$request->shopier_komisyon_orani]);
+
+        $paytr_magaza_no = Ayarlar::where('name','paytr_magaza_no')->update(['value'=>$request->paytr_magaza_no]);
+        $paytr_magaza_anahtari = Ayarlar::where('name','paytr_magaza_anahtari')->update(['value'=>$request->paytr_magaza_anahtari]);
+        $paytr_magaza_gizli_anahtari = Ayarlar::where('name','paytr_magaza_gizli_anahtari')->update(['value'=>$request->paytr_magaza_gizli_anahtari]);
+        $paytr_komisyon_orani = Ayarlar::where('name','paytr_komisyon_orani')->update(['value'=>$request->paytr_komisyon_orani]);
+
+        return Redirect::back()->with('success','Ödeme bilgileri başarıyla güncellendi');
+    }
+    public function extraIndex(){
+        return view('admin.pages.ayarlar.extra');
+    }
+    public function extraKaydet(Request $request){
+
+        Ayarlar::where('name','extra_header')->update(['value'=>$request->extra_header]);
+        Ayarlar::where('name','extra_footer')->update(['value'=>$request->extra_footer]);
+        return Redirect::back()->with('success','Ödeme bilgileri başarıyla güncellendi');
+
     }
 
 }

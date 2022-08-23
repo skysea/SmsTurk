@@ -73,9 +73,20 @@ Route::prefix('admin')->group(function (){
         Route::post('/genel-ayarlar/smtp-kaydet',[AdminAyarlarController::class,'smtpKaydet'])->name('admin.genel.ayarlar.smtp.kaydet');
         Route::get('/genel-ayarlar/recaptha',[AdminAyarlarController::class,'recapthaIndex'])->name('admin.genel.ayarlar.recaptha');
         Route::post('/genel-ayarlar/recaptha-kaydet',[AdminAyarlarController::class,'recapthaKaydet'])->name('admin.genel.ayarlar.recaptha.kaydet');
-        Route::get('/genel-ayarlar/api',[AdminAyarlarController::class,'apiIndex'])->name('genel.ayarlar.api');
-        Route::post('/genel-ayarlar/apikaydet',[AdminAyarlarController::class,'apiKaydet'])->name('genel.ayarlar.api.kaydet');
-        Route::get('/genel-ayarlar/odeme',[AdminAyarlarController::class,'odemeIndex'])->name('genel.ayarlar.odeme');
+        Route::get('/genel-ayarlar/api',[AdminAyarlarController::class,'apiIndex'])->name('admin.genel.ayarlar.api');
+        Route::post('/genel-ayarlar/apikaydet',[AdminAyarlarController::class,'apiKaydet'])->name('admin.genel.ayarlar.api.kaydet');
+        Route::get('/genel-ayarlar/odeme',[AdminAyarlarController::class,'odemeIndex'])->name('admin.genel.ayarlar.odeme');
+        Route::post('/genel-ayarlar/odeme-kaydet',[AdminAyarlarController::class,'odemeKaydet'])->name('admin.genel.ayarlar.odeme.kaydet');
+        Route::get('/genel-ayarlar/extra',[AdminAyarlarController::class,'extraIndex'])->name('admin.genel.ayarlar.extra');
+        Route::post('/genel-ayarlar/extra-kaydet',[AdminAyarlarController::class,'extraKaydet'])->name('admin.genel.ayarlar.extra.kaydet');
+
+        Route::get('/test',function (){
+
+            $api = new \App\Http\Controllers\API\besSimNet();
+
+            echo $api->getKategori('russia','any');
+
+        });
     });
 });
 

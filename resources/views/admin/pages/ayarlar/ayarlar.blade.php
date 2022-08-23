@@ -33,13 +33,13 @@
                                 <a class="nav-link"   href="{{route('admin.genel.ayarlar.recaptha')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">ReCaptha</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  href="{{route('genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
+                                <a class="nav-link"  href="{{route('admin.genel.ayarlar.api')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">API</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="{{route('genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
+                                <a class="nav-link"   href="{{route('admin.genel.ayarlar.odeme')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ödeme</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"   href="#justify-right-contact" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>
+                                <a class="nav-link"   href="{{route('admin.genel.ayarlar.extra')}}" role="tab" aria-controls="justify-right-contact" aria-selected="false">Ekstra</a>
                             </li>
                         </ul>
                     </div>
@@ -153,6 +153,15 @@
                                         <div class="invalid-feedback" style="display: block;">{{$errors->first('email')}}</div>
                                     @endif
                                 </div>
+                            </div>
+
+
+                            <div class="form-row mb-4">
+                                <div class="form-group col-md-6">
+                                    <label for="whatsapp">Footer Yazısı</label>
+                                    <input required value="{{getAyarlar('footer_text')}}" name="footer_text" type="text" class="form-control" id="footer_text" placeholder="Footer yazısını yazınız">
+                                </div>
+
                             </div>
 
 
