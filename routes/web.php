@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAyarlarController;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\PasswordResetController;
 use App\Http\Controllers\Home\RegisterController;
@@ -19,7 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test',function (){
 
+    $api = new \App\Http\Controllers\API\besSimNet();
+    echo $api->get_balance();
+
+});
 
 
 //Home
@@ -79,14 +85,10 @@ Route::prefix('admin')->group(function (){
         Route::post('/genel-ayarlar/odeme-kaydet',[AdminAyarlarController::class,'odemeKaydet'])->name('admin.genel.ayarlar.odeme.kaydet');
         Route::get('/genel-ayarlar/extra',[AdminAyarlarController::class,'extraIndex'])->name('admin.genel.ayarlar.extra');
         Route::post('/genel-ayarlar/extra-kaydet',[AdminAyarlarController::class,'extraKaydet'])->name('admin.genel.ayarlar.extra.kaydet');
+        //Kategoriler
+        Route::get('/kategoriler',[KategoriController::class,'Index'])->name('admin.kategoriler');
+        Route::get('/kategoriler/kategori-ekle',[KategoriController::class,'IndexKategoriEkle'])->name('admin.kategoriler.kategori.ekle');
 
-        Route::get('/test',function (){
-
-            $api = new \App\Http\Controllers\API\besSimNet();
-
-            echo $api->getKategori('russia','any');
-
-        });
     });
 });
 

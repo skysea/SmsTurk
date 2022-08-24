@@ -23,7 +23,8 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="#kategoriler" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+
+                <a href="#kategoriler" data-active="{{explode('.',Route::currentRouteName())[1] == 'kategoriler' ? 'true':'false'}}" data-toggle="collapse" aria-expanded="{{explode('.',Route::currentRouteName())[1] == 'kategoriler' ? 'true':'false'}}" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                         <span>Kategoriler</span>
@@ -32,12 +33,12 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled" id="kategoriler" data-parent="#accordionExample">
-                    <li>
-                        <a href="table_dt_basic.html"> Kategoriler </a>
+                <ul class="collapse submenu list-unstyled {{explode('.',Route::currentRouteName())[1] == 'kategoriler' ? 'show':''}}" id="kategoriler" data-parent="#accordionExample">
+                    <li class="{{Route::currentRouteName() == 'admin.kategoriler' ? 'active':''}}">
+                        <a href="{{route('admin.kategoriler')}}"> Kategoriler </a>
                     </li>
-                    <li>
-                        <a href="table_dt_basic-dark.html"> Kategori Ekle </a>
+                    <li class="{{Route::currentRouteName() == 'admin.kategoriler.kategori.ekle' ? 'active':''}}">
+                        <a href="{{route('admin.kategoriler.kategori.ekle')}}"> Kategori Ekle </a>
                     </li>
 
 

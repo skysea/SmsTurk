@@ -10,41 +10,16 @@ use Illuminate\Support\Facades\Http;
 class besSimNet extends Controller
 {
 
-    private $url = 'https://5sim.net/v1';
-    private $apikey;
 
-    public function apikey(){
-        $this->apikey = getAyarlar('sim5_api_key');
-    }
+    public function get_balance(){
 
-
-
-    public function getKategori($ulke,$operator){
-
-        $url = 'https://5sim.net/v1/guest/products';
-        $response = Http::withHeaders([
-            'Accept' => 'application/json',
-        ])->get('https://5sim.net/v1/guest/prices', [
-            'product' => 'russia',
-            'country'=>'turkey'
+        $api_key = getAyarlar('sim5_api_key');
+        $balance = Http::get('http://api2.5sim.net/stubs/handler_api.php?',[
+            'api_key'=>$api_key,
+            'action'=>'getBalance'
         ]);
-        //dd($response);
-        return $response;
+        return explode(":",$balance)[1];
     }
-
-
-    private function request($data){
-
-        $serializedData = http_build_query($data);
-      $response =  Http::get('https://5sim.net/v1/guest/products',
-      [
-          $data
-      ]
-      );
-
-      return $response;
-    }
-
 
 
 

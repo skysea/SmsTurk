@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
-@section('admin-title','API Ayarları')
-@section('admin-sub-header','API Ayarları')
+@section('admin-title','Kategoriler')
+@section('admin-sub-header','Kategoriler')
 @section('admin-content')
     <div class="layout-px-spacing">
         <div class="row sales layout-top-spacing">
@@ -9,7 +9,7 @@
 
                 <div class="widget widget-account-invoice-one">
                     <div class="widget-heading">
-                        <h5 class="">API Ayarları</h5>
+                        <h5 class="">Kategoriler</h5>
 
                     </div>
 
