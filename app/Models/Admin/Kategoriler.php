@@ -9,4 +9,5 @@ class Kategoriler extends Model
 {
     protected $table = 'kategoriler';
     protected $guarded = ['id'];
+
 }

@@ -1,7 +1,7 @@
 @if(Session::has('error'))
     <script>
         let myToasteur = new Toasteur("top-center");
-        myToasteur.success('{{Session::get('error')}}', 'Başarılı', () => {})
+        myToasteur.success('{{Session::get('error')}}', 'Hata', () => {})
     </script>
 
 

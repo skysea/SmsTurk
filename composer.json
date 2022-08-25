@@ -10,7 +10,8 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "phpmailer/phpmailer": "v6.6.3"
+        "phpmailer/phpmailer": "v6.6.3",
+        "yajra/laravel-datatables-oracle": "v10.1.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",

@@ -30,7 +30,8 @@
 
                     <div class="widget-content mt-5">
 
-                        <form action="" method="post">
+                        <form action="{{route('admin.kategoriler.kategori.kaydet')}}" method="post">
+                            @csrf
                             <div class="form-row mb-4">
                                 <div class="form-group col-md-6">
                                     <label for="smtp_host">Kategori Adı</label>
@@ -38,12 +39,10 @@
                                     @if($errors->has('kategori_adi'))
                                         <div class="invalid-feedback" style="display: block;">{{$errors->first('kategori_adi')}}</div>
                                     @endif
-
                                 </div>
                             </div>
                             <div class="form-row mb-4">
                                 <div class="form-group col-md-6">
-
                                     <label for="smtp_host">Kategori İcon</label>
                                     <div class="input-group mb-4">
                                         <input value="{{old('kategori_icon')}}" name="kategori_icon" type="text" class="form-control" placeholder="Kategori iconu" >
@@ -96,8 +95,8 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Kapat</button>
-{{--                    <button type="button" class="btn btn-primary">Save</button>--}}
+                    <button class="btn btn-danger" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Kapat</button>
+
                 </div>
             </div>
         </div>

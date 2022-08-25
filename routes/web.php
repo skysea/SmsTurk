@@ -88,6 +88,10 @@ Route::prefix('admin')->group(function (){
         //Kategoriler
         Route::get('/kategoriler',[KategoriController::class,'Index'])->name('admin.kategoriler');
         Route::get('/kategoriler/kategori-ekle',[KategoriController::class,'IndexKategoriEkle'])->name('admin.kategoriler.kategori.ekle');
+        Route::post('/kategoriler/kategori-kaydet',[KategoriController::class,'kategoriKaydet'])->name('admin.kategoriler.kategori.kaydet');
+        Route::get('/kategoriler/getTable',[KategoriController::class,'getTable'])->name('admin.kategoriler.gettable');
+        Route::post('/kategoriler/secililersil',[KategoriController::class,'secililerSil'])->name('admin.kategoriler.secililer.sil');
+        Route::post('/kategoriler/single-sil',[KategoriController::class,'singleSil'])->name('admin.kategoriler.single.sil');
 
     });
 });
