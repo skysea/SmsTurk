@@ -54,7 +54,7 @@ class KategoriController extends Controller
             ->rawColumns(['checkbox'])
             ->addColumn('action',function ($row){
                 return '
-                   <a title="Düzenle" data-id="'.$row->id.'" data-kategori_name="'.$row->kategori_adi.'"  data-kategori_icon="'.$row->kategori_icon.'"  href="#" data-toggle="modal" data-target="#modalKategoriDuzenle"  class="btn btn-sm btn-outline-info waves-effect waves-light"><i class="fa fa-edit"></i> </a>
+                   <a title="Düzenle" data-id="'.$row->id.'" data-kategori_adi="'.$row->kategori_adi.'"  data-kategori_icon="'.$row->kategori_icon.'"  href="#" data-toggle="modal" data-target="#modalKategoriDuzenle"  class="btn btn-sm btn-outline-info waves-effect waves-light"><i class="fa fa-edit"></i> </a>
                    <a title="Sil" data-id="" href="#" onclick="singleSil('.$row->id.')" class="sil btn btn-sm btn-outline-info waves-effect waves-light"><i class="fa fa-trash"></i> </a>
                    ';
             })

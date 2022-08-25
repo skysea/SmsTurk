@@ -155,7 +155,6 @@ $("#modalKategoriDuzenle").on('show.bs.modal',function (event){
     var kategori_adi = $(event.relatedTarget).data('kategori_adi');
     var kategori_icon = $(event.relatedTarget).data('kategori_icon');
 
-    alert(kategori_adi);
     $("#modal_kategori_duzenle_form").find('input[name=kategori_adi]').val(kategori_adi);
 
 
