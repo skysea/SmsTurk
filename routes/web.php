@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAyarlarController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\KategoriController;
+use App\Http\Controllers\Admin\ServislerController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\PasswordResetController;
 use App\Http\Controllers\Home\RegisterController;
@@ -92,6 +93,12 @@ Route::prefix('admin')->group(function (){
         Route::get('/kategoriler/getTable',[KategoriController::class,'getTable'])->name('admin.kategoriler.gettable');
         Route::post('/kategoriler/secililersil',[KategoriController::class,'secililerSil'])->name('admin.kategoriler.secililer.sil');
         Route::post('/kategoriler/single-sil',[KategoriController::class,'singleSil'])->name('admin.kategoriler.single.sil');
+        Route::post('/kategoriler/kategori-duzenle',[KategoriController::class,'kategoriDuzenle'])->name('admin.ktaegoriler.kategori.duzenle');
+
+        //Servisler
+        Route::get('/servisler/servis-ekle',[ServislerController::class,'servisEkleIndex'])->name('admin.servisler.servis.ekle');
+        Route::get('/servisler/getSelectKategoriler',[ServislerController::class,'getSelectKategoriler'])->name('admin.servisler.getSelectKategoriler');
+
 
     });
 });

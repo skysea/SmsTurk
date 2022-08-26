@@ -7,6 +7,8 @@ use App\Models\Admin\Kategoriler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 
 class KategoriController extends Controller
@@ -74,6 +76,31 @@ class KategoriController extends Controller
         if(Kategoriler::find($request->id)->delete()){
 
             return response()->json(['result'=>'ok','mesaj'=> 'Kategori başarıyla silindi']);
+        }
+    }
+
+
+    public function kategoriDuzenle(Request $request){
+
+        $validator = Validator::make($request->all(),[
+
+            'kategori_adi'=>'required|unique:kategoriler,kategori_adi,'.$request->id,
+            'kategori_icon' =>'required'
+
+        ],[
+            'kategori_adi.required'=>'Kategori adını yazmadınız',
+            'kategori_adi.unique' =>'Kategori daha önce kayıt yapılmış',
+            'kategori_icon.required'=>'Icon yazmadınız',
+
+        ]);
+
+        if($validator->fails()){
+            return response()->json(['errors'=>$validator->errors()->all()]);
+        }
+
+
+        if(Kategoriler::where('id',$request->id)->update($request->all())){
+            return response()->json(['success'=>'Kategori başarıyla güncellendi']);
         }
     }
 }

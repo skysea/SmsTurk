@@ -151,12 +151,63 @@ function singleSil(id){
 
 $("#modalKategoriDuzenle").on('show.bs.modal',function (event){
 
+    $('#modalKategoriDuzenle').find(".alert-danger").html('');
+    $('#modalKategoriDuzenle').find(".alert-danger").hide();
+    $("#svg1").remove("#svg1");
     var id = $(event.relatedTarget).data('id');
     var kategori_adi = $(event.relatedTarget).data('kategori_adi');
     var kategori_icon = $(event.relatedTarget).data('kategori_icon');
 
+
     $("#modal_kategori_duzenle_form").find('input[name=kategori_adi]').val(kategori_adi);
+    $("#modal_kategori_duzenle_form").find('input[name=kategori_icon]').val(kategori_icon);
+    $("#modal_kategori_duzenle_form").find('input[name=hidden_kategori_id]').val(id);
+    $("#basic-addon2").append('<object height="30" id="svg1" data="/assets/images/kategori_icon/'+kategori_icon+'" type="image/svg+xml"></object>');
 
+});
 
+$(".btn-kategori-guncelle").click(function (e){
+
+    $('.loading-kategori-duzenle').waitMe({effect:'ios'});
+    var form_data = new FormData();
+    var kategori_adi = $("#modal_kategori_duzenle_form").find('input[name=kategori_adi]').val();
+    var kategori_icon = $("#modal_kategori_duzenle_form").find('input[name=kategori_icon]').val();
+    var id = $("#modal_kategori_duzenle_form").find('input[name=hidden_kategori_id]').val();
+    form_data.append('kategori_adi',kategori_adi);
+    form_data.append('kategori_icon',kategori_icon);
+    form_data.append('id',kategori_adi);
+    form_data.append('id',id);
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    e.preventDefault();
+    $.ajax({
+        processData: false,
+        contentType: false,
+        type:'POST',
+        url:"/admin/kategoriler/kategori-duzenle",
+        data:form_data,
+        success:function (data){
+            if(data.success){
+                myToasteur.success(data['success'], 'Başarılı', () => {})
+                $('#modalKategoriDuzenle').modal('hide')
+                table.ajax.reload();
+            }
+            if(data.errors){
+                $('#modalKategoriDuzenle').find(".alert-danger").html('');
+
+                $.each(data.errors,function (key,value){
+
+                    $('#modalKategoriDuzenle').find(".alert-danger").show();
+                    $('#modalKategoriDuzenle').find(".alert-danger").append('<li>'+value+'</li>');
+
+                });
+
+            }
+            $('.modal-body').waitMe('hide');
+        }
+    });
 
 });
